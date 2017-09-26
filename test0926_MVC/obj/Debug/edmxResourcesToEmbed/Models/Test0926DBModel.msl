@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="test0926DBModelStoreContainer" CdmEntityContainer="test0926DBEntities">
+    <EntitySetMapping Name="testTables">
+      <EntityTypeMapping TypeName="test0926DBModel.testTable">
+        <MappingFragment StoreEntitySet="testTable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="charData" ColumnName="charData" />
+          <ScalarProperty Name="intData" ColumnName="intData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="intDataInfoes">
+      <EntityTypeMapping TypeName="test0926DBModel.intDataInfo">
+        <MappingFragment StoreEntitySet="intDataInfo">
+          <ScalarProperty Name="intDataName" ColumnName="intDataName" />
+          <ScalarProperty Name="intData" ColumnName="intData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vIntDataInfoes">
+      <EntityTypeMapping TypeName="test0926DBModel.vIntDataInfo">
+        <MappingFragment StoreEntitySet="vIntDataInfo">
+          <ScalarProperty Name="intDataName" ColumnName="intDataName" />
+          <ScalarProperty Name="charData" ColumnName="charData" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

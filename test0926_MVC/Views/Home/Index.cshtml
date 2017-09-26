@@ -1,0 +1,20 @@
+﻿@using test0926_MVC.Models;
+@model List<vIntDataInfo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="~/Home/Create">New Item</a>
+
+<table class="table">
+    <tr><th>id</th><th>charData</th><th>intData</th></tr>
+    @foreach (vIntDataInfo row in Model) {
+        <tr>
+            <td>@row.id</td><td>@row.charData</td><td>@row.intDataName</td><td>
+            <a href="~/Home/Edit/@row.id">Edit</a>
+            <a href="~/Home/Delete/@row.id">Delete</a></td>
+        </tr>
+    }
+</table>

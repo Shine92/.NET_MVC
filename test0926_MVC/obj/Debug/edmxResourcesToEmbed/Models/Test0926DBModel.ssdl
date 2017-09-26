@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="test0926DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="intDataInfo">
+    <Key>
+      <PropertyRef Name="intData" />
+    </Key>
+    <Property Name="intData" Type="int" Nullable="false" />
+    <Property Name="intDataName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="testTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="charData" Type="varchar" MaxLength="20" />
+    <Property Name="intData" Type="int" />
+  </EntityType>
+  <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'test0926DB.dbo.vIntDataInfo' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+  <EntityType Name="vIntDataInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="charData" Type="varchar" MaxLength="20" />
+    <Property Name="intDataName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityContainer Name="test0926DBModelStoreContainer">
+    <EntitySet Name="intDataInfo" EntityType="Self.intDataInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="testTable" EntityType="Self.testTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vIntDataInfo" EntityType="Self.vIntDataInfo" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vIntDataInfo].[id] AS [id], 
+    [vIntDataInfo].[charData] AS [charData], 
+    [vIntDataInfo].[intDataName] AS [intDataName]
+    FROM [dbo].[vIntDataInfo] AS [vIntDataInfo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

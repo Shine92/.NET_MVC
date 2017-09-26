@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="test0926DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="testTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="charData" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="intData" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="test0926DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="testTables" EntityType="Self.testTable" />
+    <EntitySet Name="intDataInfoes" EntityType="test0926DBModel.intDataInfo" />
+    <EntitySet Name="vIntDataInfoes" EntityType="test0926DBModel.vIntDataInfo" />
+  </EntityContainer>
+  <EntityType Name="intDataInfo">
+    <Key>
+      <PropertyRef Name="intData" />
+    </Key>
+    <Property Name="intData" Type="Int32" Nullable="false" />
+    <Property Name="intDataName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vIntDataInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="charData" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="intDataName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
